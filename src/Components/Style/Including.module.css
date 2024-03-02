@@ -1,0 +1,25 @@
+div.caracthersType {
+    width: 100%;
+}
+
+div.divType {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+p.typeName {
+    font-size: 0.8rem;
+}
+
+input.typeCheck {
+    display: none;
+}
+
+div.pseudoCheck {
+    background-color: #5ACA75;
+    height: 0.75rem;
+    width: 0.75rem;
+    margin-right: 5%;
+    cursor: pointer;
+}
