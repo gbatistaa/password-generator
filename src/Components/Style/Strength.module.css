@@ -1,0 +1,41 @@
+div.strengthInfoDiv {
+    height: 16%;
+    width: 100%;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #161b20;
+}
+
+div.levelDiv {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: blueviolet; */
+}
+
+p.strengthLevel {
+    font-weight: 600;
+}
+
+p.nameInfo {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #747e90;
+}
+
+div.barsDiv {
+    height: 65%;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.levelBar {
+    height: 100%;
+    width: 8px;
+    border: 2px solid white;
+}
