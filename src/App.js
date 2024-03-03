@@ -18,7 +18,7 @@ function App() {
         <Strength />
         <button type="submit" className="generate-btn">
           GENERATE
-          <img src={arrow} alt="arrow" />
+          <img src={arrow} alt="arrow" className="arrow-btn" />
         </button>
       </div>
     </div>
