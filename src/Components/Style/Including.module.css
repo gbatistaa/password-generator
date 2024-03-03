@@ -17,9 +17,9 @@ input.typeCheck {
 }
 
 div.pseudoCheck {
-    background-color: #5ACA75;
     height: 0.75rem;
     width: 0.75rem;
     margin-right: 5%;
+    border: solid 2px #5ACA75;
     cursor: pointer;
 }
