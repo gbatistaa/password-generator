@@ -4,7 +4,6 @@
 }
 
 .App {
-
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -67,4 +66,14 @@ p.length-number {
 
 input.length-range {
     height: fit-content;
+}
+
+div.password-settings button.generate-btn {
+    height: 18%;
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    font-family: "Mono";
+    border: 3px solid #5ACA75;
+    color: #5ACA75;
 }
