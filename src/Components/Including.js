@@ -11,8 +11,9 @@ function Including() {
   const typeDivs = includes.map((inludingName) => {
     return (
       <div className={styles.divType}>
-        <div className={styles.pseudoCheck}></div>
-        <input type="checkbox" className={styles.typeCheck} />
+        <label className={styles.pseudoCheck}>
+          <input type="checkbox" className={styles.typeCheck} />
+        </label>
         <p className={styles.typeName}>{inludingName}</p>
       </div>
     );
