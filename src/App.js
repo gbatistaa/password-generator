@@ -1,5 +1,5 @@
 import "./App.css";
-import arrow from "./assets/arrow-right-solid.svg";
+import GeneratorButton from "./Components/GeneratorButton";
 import Strength from "./Components/Strength";
 import Including from "./Components/Including";
 
@@ -16,10 +16,7 @@ function App() {
         <input type="range" className="length-range" />
         <Including />
         <Strength />
-        <button type="submit" className="generate-btn">
-          GENERATE
-          <img src={arrow} alt="arrow" className="arrow-btn" />
-        </button>
+        <GeneratorButton />
       </div>
     </div>
   );
