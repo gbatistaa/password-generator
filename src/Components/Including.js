@@ -1,30 +1,24 @@
 import styles from "./Style/Including.module.css";
 
 function Including() {
-  return (
-    <div className={styles.caracthersType}>
+  const includes = [
+    "Include Upper Case Letters",
+    "Include Lower Case Letters",
+    "Include Numbers",
+    "Include Symbols",
+  ];
+
+  const typeDivs = includes.map((inludingName) => {
+    return (
       <div className={styles.divType}>
         <div className={styles.pseudoCheck}></div>
         <input type="checkbox" className={styles.typeCheck} />
-        <p className={styles.typeName}>Include Upper Case Letters</p>
+        <p className={styles.typeName}>{inludingName}</p>
       </div>
-      <div className={styles.divType}>
-        <div className={styles.pseudoCheck}></div>
-        <input type="checkbox" className={styles.typeCheck} />
-        <p className={styles.typeName}>Include Lower Case Letters</p>
-      </div>
-      <div className={styles.divType}>
-        <div className={styles.pseudoCheck}></div>
-        <input type="checkbox" className={styles.typeCheck} />
-        <p className={styles.typeName}>Include Numbers</p>
-      </div>
-      <div className={styles.divType}>
-        <div className={styles.pseudoCheck}></div>
-        <input type="checkbox" className={styles.typeCheck} />
-        <p className={styles.typeName}>Include Symbols</p>
-      </div>
-    </div>
-  );
+    );
+  });
+
+  return <div className={styles.caracthersType}>{typeDivs}</div>;
 }
 
 export default Including;
