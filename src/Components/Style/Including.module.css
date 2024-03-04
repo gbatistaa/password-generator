@@ -17,7 +17,7 @@ input.typeCheck {
     display: none;
 }
 
-div.pseudoCheck {
+label.pseudoCheck {
     height: 0.75rem;
     width: 0.75rem;
     margin-right: 5%;
