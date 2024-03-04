@@ -6,6 +6,7 @@ div.strengthInfoDiv {
     justify-content: space-between;
     align-items: center;
     background-color: #161b20;
+    margin-bottom: auto;
 }
 
 div.levelDiv {
@@ -14,7 +15,6 @@ div.levelDiv {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: blueviolet; */
 }
 
 p.strengthLevel {
@@ -37,5 +37,5 @@ div.barsDiv {
 div.levelBar {
     height: 100%;
     width: 8px;
-    border: 2px solid white;
+    border: 2px solid #ffffff;
 }
