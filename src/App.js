@@ -3,9 +3,10 @@ import { useState } from "react";
 import GeneratorButton from "./Components/GeneratorButton";
 import Strength from "./Components/Strength";
 import Including from "./Components/Including";
+import { CharTypesProvider } from "./CharTypesContext.js";
 
 function App() {
-  const [lengthRange, setLengthRange] = useState(0);
+  const [lengthRange, setLengthRange] = useState(6);
   const [lengthPercentage, setLengthPercentage] = useState(0);
 
   const handleRangeInputChange = (e) => {
@@ -32,15 +33,17 @@ function App() {
         <input
           type="range"
           className="length-range"
-          min="0"
+          min="6"
           max="25"
           value={lengthRange}
           style={{ backgroundSize: `${lengthPercentage}% 100%` }}
           onChange={(e) => handleRangeInputChange(e)}
         />
-        <Including />
-        <Strength />
-        <GeneratorButton />
+        <CharTypesProvider>
+          <Including />
+          <Strength />
+          <GeneratorButton />
+        </CharTypesProvider>
       </div>
     </div>
   );
