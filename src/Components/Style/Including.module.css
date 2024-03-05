@@ -10,7 +10,7 @@ div.divType {
 }
 
 p.typeName {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 input.typeCheck {
@@ -18,9 +18,21 @@ input.typeCheck {
 }
 
 label.pseudoCheck {
-    height: 0.75rem;
-    width: 0.75rem;
+    height: 0.9rem;
+    width: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2px;
     margin-right: 5%;
-    border: solid 2px #5ACA75;
     cursor: pointer;
+    border: solid 2px #5ACA75;
+}
+
+label.checked {
+    background-color: #5ACA75;
+}
+
+label.checked::after {
+    content: url(../../assets/icon-check.svg);
 }
