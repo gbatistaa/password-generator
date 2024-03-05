@@ -1,7 +1,9 @@
 import styles from "./Style/Including.module.css";
-import { useReducer } from "react";
+import { useCharTypes } from "../CharTypesContext.js";
 
 function Including() {
+  const { userIncludings, dispatch } = useCharTypes();
+
   const includes = [
     "Include Upper Case Letters",
     "Include Lower Case Letters",
@@ -10,30 +12,6 @@ function Including() {
   ];
 
   const names = ["upper", "lower", "numbers", "symbols"];
-
-  const inicialuserIncludings = {
-    upper: false,
-    lower: false,
-    numbers: false,
-    symbols: false,
-  };
-
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "set upper":
-        return { ...state, upper: action.value };
-      case "set lower":
-        return { ...state, lower: action.value };
-      case "set numbers":
-        return { ...state, numbers: action.value };
-      case "set symbols":
-        return { ...state, symbols: action.value };
-
-      default:
-        return state;
-    }
-  };
-  const [userIncludings, dispatch] = useReducer(reducer, inicialuserIncludings);
 
   const handleLabelClick = (event) => {
     event.preventDefault();
