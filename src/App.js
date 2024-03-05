@@ -1,25 +1,16 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, createContext } from "react";
+import { CharTypesProvider } from "./CharTypesContext.js";
+import { passwordStrengthLogic } from "./logic.js";
 import GeneratorButton from "./Components/GeneratorButton";
 import Strength from "./Components/Strength";
 import Including from "./Components/Including";
-import { CharTypesProvider } from "./CharTypesContext.js";
+import RangeLength from "./Components/RangeLength.js";
+
+export const LengthContext = createContext();
 
 function App() {
   const [lengthRange, setLengthRange] = useState(6);
-  const [lengthPercentage, setLengthPercentage] = useState(0);
-
-  const handleRangeInputChange = (e) => {
-    e.preventDefault();
-
-    const range = e.target;
-    const min = range.min;
-    const max = range.max;
-    const passwordLength = range.value;
-    setLengthRange(passwordLength);
-    const percentage = ((passwordLength - min) * 100) / (max - min);
-    setLengthPercentage(percentage);
-  };
 
   return (
     <div className="App">
@@ -30,16 +21,10 @@ function App() {
           <p className="mini-name">Caracther length</p>
           <p className="length-number">{lengthRange}</p>
         </div>
-        <input
-          type="range"
-          className="length-range"
-          min="6"
-          max="25"
-          value={lengthRange}
-          style={{ backgroundSize: `${lengthPercentage}% 100%` }}
-          onChange={(e) => handleRangeInputChange(e)}
-        />
         <CharTypesProvider>
+          <LengthContext.Provider value={{ lengthRange, setLengthRange }}>
+            <RangeLength />
+          </LengthContext.Provider>
           <Including />
           <Strength />
           <GeneratorButton />
