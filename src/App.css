@@ -65,9 +65,34 @@ p.length-number {
         0 0 15px rgb(90, 202, 117), 0 0 15px #5ACA75;
 }
 
-input.length-range {
-    height: fit-content;
+input[type="range"].length-range {
+    appearance: none;
+    height: 10px;
+    width: 100%;
     margin-bottom: auto;
+    border-radius: 5px;
+    background-color: #131218;
+    background-image: linear-gradient(#5ACA75, #5ACA75);
+    background-repeat: no-repeat;
+}
+
+input[type="range"].length-range::-webkit-slider-thumb {
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #131218;
+    border: 2px solid #5ACA75;
+    box-shadow: 0 0 2px 0 #555;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+input[type="range"].length-range::-webkit-slider-runnable-track {
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
 }
 
 div.password-settings button.generate-btn {
