@@ -81,6 +81,13 @@ div.password-settings button.generate-btn {
     font-family: "Mono";
     border: 3px solid #5ACA75;
     color: #5ACA75;
+    transition: all 0.15s ease-out;
+}
+
+div.password-settings button.generate-btn:hover {
+    background-color: #5ACA75;
+    color: #22272d;
+    font-weight: 700;
 }
 
 img.arrow-btn {
