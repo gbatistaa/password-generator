@@ -45,7 +45,9 @@ function Including() {
     return (
       <div className={styles.divType}>
         <label
-          className={styles.pseudoCheck}
+          className={`${styles.pseudoCheck} ${
+            userIncludings[`${names[index]}`] ? styles.checked : ""
+          }`}
           onClick={(e) => handleLabelClick(e)}
         >
           <input
