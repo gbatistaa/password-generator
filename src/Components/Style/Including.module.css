@@ -27,6 +27,7 @@ label.pseudoCheck {
     margin-right: 5%;
     cursor: pointer;
     border: solid 2px #5ACA75;
+    transition: all 0.1s ease-out;
 }
 
 label.checked {
