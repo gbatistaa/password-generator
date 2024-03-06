@@ -5,7 +5,7 @@ import { passwordStrengthLogic } from "../logic.js";
 
 function RangeLength() {
   const { lengthRange, setLengthRange } = useContext(LengthContext);
-  const { setStrengthState } = useContext(StrengthContext);
+  const { strengthState, setStrengthState } = useContext(StrengthContext);
   const { userIncludings } = useCharTypes();
   const [lengthPercentage, setLengthPercentage] = useState(0);
 
@@ -25,7 +25,6 @@ function RangeLength() {
   useEffect(() => {
     const currentStrength = passwordStrengthLogic(userIncludings, lengthRange);
     setStrengthState(currentStrength);
-    console.log("renderizei");
   }, [userIncludings, lengthRange, setStrengthState]);
 
   return (
