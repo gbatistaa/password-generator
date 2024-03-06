@@ -13,26 +13,24 @@ function Including() {
 
   const names = ["upper", "lower", "numbers", "symbols"];
 
-  const handleLabelClick = (event) => {
-    event.preventDefault();
-    const { name, checked } = event.target.firstChild;
-    dispatch({ type: `set ${name}`, value: !checked });
+  const handleInputChange = (event) => {
+    const { name, checked } = event.target;
+    dispatch({ type: `set ${name}`, value: checked });
   };
 
   const typeDivs = includes.map((inludingName, index) => {
     return (
-      <div className={styles.divType}>
+      <div className={styles.divType} key={index}>
         <label
           className={`${styles.pseudoCheck} ${
             userIncludings[`${names[index]}`] ? styles.checked : ""
           }`}
-          onClick={(e) => handleLabelClick(e)}
         >
           <input
             type="checkbox"
             className={styles.typeCheck}
             name={`${names[index]}`}
-            checked={userIncludings[`${names[index]}`]}
+            onChange={(e) => handleInputChange(e)}
           />
         </label>
         <p className={styles.typeName}>{inludingName}</p>
