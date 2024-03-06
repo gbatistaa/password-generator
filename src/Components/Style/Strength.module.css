@@ -11,7 +11,7 @@ div.strengthInfoDiv {
 
 div.levelDiv {
     height: 100%;
-    width: 35%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,6 +19,7 @@ div.levelDiv {
 
 p.strengthLevel {
     font-weight: 600;
+    margin-right: 5%;
 }
 
 p.nameInfo {
@@ -29,7 +30,7 @@ p.nameInfo {
 
 div.barsDiv {
     height: 65%;
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: space-between;
 }
