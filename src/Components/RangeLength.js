@@ -1,9 +1,12 @@
 import { useCharTypes } from "../CharTypesContext.js";
-import { useContext, useState } from "react";
-import { LengthContext } from "../App.js";
+import { useContext, useState, useEffect } from "react";
+import { LengthContext, StrengthContext } from "../App.js";
+import { passwordStrengthLogic } from "../logic.js";
 
 function RangeLength() {
   const { lengthRange, setLengthRange } = useContext(LengthContext);
+  const { setStrengthState } = useContext(StrengthContext);
+  const { userIncludings } = useCharTypes();
   const [lengthPercentage, setLengthPercentage] = useState(0);
 
   const handleRangeInputChange = (e) => {
@@ -13,10 +16,17 @@ function RangeLength() {
     const min = range.min;
     const max = range.max;
     const passwordLength = range.value;
+
     setLengthRange(passwordLength);
     const percentage = ((passwordLength - min) * 100) / (max - min);
     setLengthPercentage(percentage);
   };
+
+  useEffect(() => {
+    const currentStrength = passwordStrengthLogic(userIncludings, lengthRange);
+    setStrengthState(currentStrength);
+    console.log("renderizei");
+  }, [userIncludings, lengthRange, setStrengthState]);
 
   return (
     <input
