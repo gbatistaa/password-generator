@@ -31,7 +31,20 @@ div.password-space {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 5px 2rem;
     margin-bottom: 15px;
+}
+
+div.password-space button {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: fit-content;
+    background-color: transparent;
+    margin-left: auto;
+    cursor: pointer;
 }
 
 div.password-settings {
@@ -113,6 +126,13 @@ div.password-settings button.generate-btn:hover {
     background-color: #5ACA75;
     color: #22272d;
     font-weight: 700;
+}
+
+div.password-settings button.generate-btn.no-type::before {
+    content: 'Select at least one character type';
+    color: red;
+    position: absolute;
+    bottom: 12%;
 }
 
 img.arrow-btn {
