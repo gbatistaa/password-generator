@@ -5,7 +5,7 @@ import { passwordStrengthLogic } from "../logic.js";
 
 function RangeLength() {
   const { lengthRange, setLengthRange } = useContext(LengthContext);
-  const { strengthState, setStrengthState } = useContext(StrengthContext);
+  const { setStrengthState } = useContext(StrengthContext);
   const { userIncludings } = useCharTypes();
   const [lengthPercentage, setLengthPercentage] = useState(0);
 
