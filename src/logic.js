@@ -1,3 +1,12 @@
+const uppercaseLetters = Array.from({ length: 26 }, (_, i) =>
+  String.fromCharCode(65 + i)
+);
+const lowercaseLetters = Array.from({ length: 26 }, (_, i) =>
+  String.fromCharCode(97 + i)
+);
+const algarisms = Array.from({ length: 10 }, (_, i) => String(i));
+const specialCharacters = ["!", "@", "#", "$", "%", "&", "*", "-"];
+
 export const passwordStrengthLogic = (characthersTypeObject, length) => {
   let passwordStrength = parseInt(length);
   for (const state in characthersTypeObject) {
@@ -16,4 +25,12 @@ export const passwordStrengthColor = (passwordStrength) => {
   } else {
     return "#5ACA75";
   }
+};
+
+export const passwordCreatorLogic = ({ lower, upper, numbers, symbols }) => {
+  let auxiliarArray = [];
+  if (lower) auxiliarArray.push(...lowercaseLetters);
+  if (upper) auxiliarArray.push(...uppercaseLetters);
+  if (numbers) auxiliarArray.push(...algarisms);
+  if (symbols) auxiliarArray.push(...specialCharacters);
 };
