@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState, createContext } from "react";
+import copy from "./assets/icon-copy.svg";
 import { CharTypesProvider } from "./CharTypesContext.js";
 import GeneratorButton from "./Components/GeneratorButton";
 import Strength from "./Components/Strength";
@@ -8,15 +9,21 @@ import RangeLength from "./Components/RangeLength.js";
 
 export const LengthContext = createContext();
 export const StrengthContext = createContext();
+export const PassowrdContext = createContext();
 
 function App() {
   const [lengthRange, setLengthRange] = useState(6);
   const [strengthState, setStrengthState] = useState(0);
+  const [passwordState, setPasswordState] = useState("");
 
   return (
     <div className="App">
       <p className="title">Passsword Generator</p>
-      <div className="password-space"></div>
+      <div className="password-space">
+        <button className="copy-button">
+          <img src={copy} alt="copy-icon" />
+        </button>
+      </div>
       <div className="password-settings">
         <div className="length-info">
           <p className="mini-name">Caracther length</p>
@@ -30,7 +37,11 @@ function App() {
               <RangeLength />
               <Including />
               <Strength />
-              <GeneratorButton />
+              <PassowrdContext.Provider
+                value={{ passwordState, setPasswordState }}
+              >
+                <GeneratorButton />
+              </PassowrdContext.Provider>
             </StrengthContext.Provider>
           </LengthContext.Provider>
         </CharTypesProvider>
