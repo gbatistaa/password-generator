@@ -12,6 +12,18 @@ export const StrengthContext = createContext();
 export const PassowrdContext = createContext();
 
 function App() {
+  const copyToClipboard = (e, texto) => {
+    e.preventDefault();
+    navigator.clipboard
+      .writeText(texto)
+      .then(function () {
+        console.log("Texto copiado para a área de transferência!");
+      })
+      .catch(function (error) {
+        console.error("Erro ao copiar texto: ", error);
+      });
+  };
+
   const [lengthRange, setLengthRange] = useState(6);
   const [strengthState, setStrengthState] = useState(0);
   const [passwordState, setPasswordState] = useState("");
@@ -21,7 +33,10 @@ function App() {
       <p className="title">Passsword Generator</p>
       <div className="password-space">
         <p className="password-text">{passwordState}</p>
-        <button className="copy-button">
+        <button
+          className="copy-button"
+          onClick={(event) => copyToClipboard(event, passwordState)}
+        >
           <img src={copy} alt="copy-icon" />
         </button>
       </div>
