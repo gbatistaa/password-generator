@@ -35,6 +35,11 @@ div.password-space {
     margin-bottom: 15px;
 }
 
+div.password-space p.password-text {
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
 div.password-space button {
     border: none;
     display: flex;
