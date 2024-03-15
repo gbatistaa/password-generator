@@ -2,13 +2,15 @@ import { useContext, useState } from "react";
 import { useCharTypes } from "../CharTypesContext.js";
 import { passwordCreatorLogic } from "../logic.js";
 import { PassowrdContext } from "../App.js";
+import { LengthContext } from "../App.js";
 import arrow from "../assets/arrow-right-solid.svg";
 import blackArrow from "../assets/arrow-right-solid-black.svg";
 
 function GeneratorButton() {
   const [hoverState, setHoverState] = useState(false);
   const [blockedState, setBlockedState] = useState(false);
-  const { passwordState, setPasswordState } = useContext(PassowrdContext);
+  const { setPasswordState } = useContext(PassowrdContext);
+  const { lengthRange } = useContext(LengthContext);
   const { userIncludings } = useCharTypes();
   //const { lower, upper, numbers, symbols } = userIncludings;
 
@@ -34,8 +36,10 @@ function GeneratorButton() {
     e.preventDefault();
     const isToBlock = verifyEveryTypeIsFalse(userIncludings);
     setBlockedState(isToBlock);
-    const newPassword = passwordCreatorLogic(userIncludings);
-    setPasswordState(newPassword);
+    if (isToBlock === false) {
+      const newPassword = passwordCreatorLogic(userIncludings, lengthRange);
+      setPasswordState(newPassword);
+    }
   };
 
   return (
