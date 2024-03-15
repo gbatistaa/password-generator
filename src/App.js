@@ -20,6 +20,7 @@ function App() {
     <div className="App">
       <p className="title">Passsword Generator</p>
       <div className="password-space">
+        <p className="password-text">{passwordState}</p>
         <button className="copy-button">
           <img src={copy} alt="copy-icon" />
         </button>
